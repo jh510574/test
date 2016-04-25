@@ -10,6 +10,7 @@ package {
 
     public function URLRequestExample():void {
       trace('fangmm constructor..start');
+      trace(Security.sandboxType);
       super();
       flash.system.Security.allowDomain('*');
       flash.system.Security.allowInsecureDomain("*");
@@ -49,7 +50,7 @@ package {
       var Stream:URLStream = new flash.net.URLStream;
       Stream.addEventListener(Event.COMPLETE, function(e:Event){
         trace('on_URLStream_complete');
-      
+
       });
       Stream.addEventListener(HTTPStatusEvent.HTTP_STATUS, function(e:HTTPStatusEvent){
         trace('on_URLStream_httpStatus');
@@ -71,10 +72,13 @@ package {
         trace('on_URLStream_securityError');
         trace(e);
       });
-
+      
+      var Request:URLRequest = new URLRequest('https://git.oschina.net/pron/pron/raw/master/b2e2/images/image.jpg');
+      Stream.load(Request);
+      /*
       var Request:URLRequest = new URLRequest('https://git.oschina.net/pron/pron/raw/master/index.html');
       Stream.load(Request);
-
+      */
     }
   }
 }

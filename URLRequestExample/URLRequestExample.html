@@ -14,12 +14,13 @@
 <div id="flashcontent"></div>
 <script>
 $(function(){
-  swfobject.embedSWF('URLRequestExample.swf', 'flashcontent', '550', '400', '6', '', {},{
+  swfobject.embedSWF('URLRequestExample.swf', 'flashcontent', '550', '400', '9', '', {},{
     'menu':false,
     'quality' : 'high',
     'wmode'   : 'transparent',
     'scale'   : 'noscale',
-    'allowScriptAccess': 'always'
+    'allowScriptAccess': 'always',
+    'allowNetworking'  : 'all'
   });
 });
 </script>
