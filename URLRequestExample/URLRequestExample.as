@@ -11,11 +11,11 @@ package {
     public function URLRequestExample():void {
       trace('fangmm constructor..start');
       super();
+      flash.system.Security.allowDomain('*');
+      flash.system.Security.allowInsecureDomain("*");
       Security.loadPolicyFile('https://git.oschina.net/pron/pron/raw/master/crossdomain.xml');
       
       /*
-      flash.system.Security.allowDomain('*');
-      flash.system.Security.allowInsecureDomain("*");
       trace(flash.system.ApplicationDomain.currentDomain);
       */
       //trace(flash.utils.getQualifiedClassName(this.graphics));
